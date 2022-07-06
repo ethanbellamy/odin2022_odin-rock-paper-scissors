@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+            function computerPlay() {
+                //Generate random number between 0 and 2
+                let randomNumber = Math.floor(Math.random() * 3);
+
+                //If 0, then Rock
+                if (randomNumber == 0) {
+                    return "Rock";
+                }
+
+                //If 1, then Paper
+                else if (randomNumber == 1) {
+                    return "Paper";
+                }
+
+                //If 2, then Scissors
+                else {
+                    return "Scissors";
+                }
+            }
+            
+            let computerSelection = computerPlay();
+        </script>
+    </body>
+</html>
