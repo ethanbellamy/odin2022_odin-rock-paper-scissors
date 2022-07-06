@@ -39,12 +39,12 @@
 
                 //Player Wins - Rock > Scissors, Paper > Rock, Scissors > Paper
                 else if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                    return "You win!";
+                    return `You win! ${playerSelection} beats ${computerSelection}`;
                 }
 
                 //Player Loses - Rock < Paper, Paper < Scissors, Scissors < Rock
                 else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-                    return "You lose!";
+                    return `You lose! ${computerSelection} beats ${playerSelection}`;
                 }
 
                 //Player entered invalid input
