@@ -29,7 +29,7 @@
             let computerSelection = computerPlay();
             let playerSelection = prompt("Rock, Paper or Scissors?");
 
-            function playGame (playerSelection, computerSelection) {
+            function playRound (playerSelection, computerSelection) {
                 //Fixes case-insensitive playerSelection prior to comparison with computerSelection
                 playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
 
@@ -57,7 +57,7 @@
                 }
             }
 
-            console.log(playGame(playerSelection, computerSelection));
+            console.log(playRound(playerSelection, computerSelection));
         </script>
     </body>
 </html>
