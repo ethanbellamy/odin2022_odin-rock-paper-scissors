@@ -25,35 +25,41 @@
                     return "Scissors";
                 }
             }
-            
-            let computerSelection = computerPlay();
-            let playerSelection = prompt("Rock, Paper or Scissors?");
 
             function playRound (playerSelection, computerSelection) {
                 //Fixes case-insensitive playerSelection prior to comparison with computerSelection
                 playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
-
-                console.log(computerSelection);
-                console.log(playerSelection);
                 
                 //Draw - Player and computer made the same choice
                 if (playerSelection == computerSelection) {
-                    return "It's a draw!";
+                    console.log("It's a draw!");
+                    return "draw";
                 }
 
                 //Player Wins - Rock > Scissors, Paper > Rock, Scissors > Paper
                 else if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                    return `You win! ${playerSelection} beats ${computerSelection}`;
+                    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                    return "win";
                 }
 
                 //Player Loses - Rock < Paper, Paper < Scissors, Scissors < Rock
                 else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-                    return `You lose! ${computerSelection} beats ${playerSelection}`;
+                    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                    return "lose";
                 }
 
                 //Player entered invalid input
                 else {
                     return "You broke the rules!"
+                }
+            }
+
+            function game() {
+                for (let i = 0; i < 5; i++) {
+                    let computerSelection = computerPlay();
+                    let playerSelection = prompt("Rock, Paper or Scissors?");
+
+                    playRound(playerSelection, computerSelection);
                 }
             }
 
