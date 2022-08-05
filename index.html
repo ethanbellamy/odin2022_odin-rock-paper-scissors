@@ -8,6 +8,7 @@
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
+        <div id="results-container"></div>
 
         <script>
             function computerPlay() {
@@ -50,12 +51,6 @@
                 else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
                     console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
                     return "lose";
-                }
-
-                //Player entered invalid input
-                else {
-                    console.log("You broke the rules!")
-                    return "invalid";
                 }
             }
 
