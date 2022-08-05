@@ -5,6 +5,10 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+
         <script>
             function computerPlay() {
                 //Generate random number between 0 and 2
@@ -55,39 +59,14 @@
                 }
             }
 
-            function game() {
-                let playerScore = 0;
-                let computerScore = 0;
+            buttons = document.querySelectorAll('button');
 
-                for (let i = 0; i < 5; i++) {
-                    let computerSelection = computerPlay();
-                    let playerSelection = prompt("Rock, Paper or Scissors?");
-
-                    let result = playRound(playerSelection, computerSelection);
-
-                    if (result == "win") {
-                        playerScore += 1;
-                    }
-
-                    else if (result == "lose") {
-                        computerScore += 1;
-                    }
-                }
-
-                if (playerScore > computerScore) {
-                    console.log(`You win! Final score: ${playerScore}-${computerScore}`);
-                }
-
-                else if (computerScore > playerScore) {
-                    console.log(`You lose! Final score: ${playerScore}-${computerScore}`);
-                }
-
-                else {
-                    console.log(`It's a draw! Final score: ${playerScore}-${computerScore}`);
-                }
-            }
-
-            game();
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    choice = e.target.id;
+                    playRound(choice, computerPlay());
+                });
+            })
         </script>
     </body>
 </html>
