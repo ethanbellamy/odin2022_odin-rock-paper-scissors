@@ -35,21 +35,27 @@
                 //Fixes case-insensitive playerSelection prior to comparison with computerSelection
                 playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
                 
+                container = document.querySelector('#results-container');
+                result = document.createElement('p');
+
                 //Draw - Player and computer made the same choice
                 if (playerSelection == computerSelection) {
-                    console.log("It's a draw!");
+                    result.textContent = "It's a draw!";
+                    container.appendChild(result);
                     return "draw";
                 }
 
                 //Player Wins - Rock > Scissors, Paper > Rock, Scissors > Paper
                 else if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                    console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                    result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+                    container.appendChild(result);
                     return "win";
                 }
 
                 //Player Loses - Rock < Paper, Paper < Scissors, Scissors < Rock
                 else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-                    console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                    result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+                    container.appendChild(result);
                     return "lose";
                 }
             }
