@@ -40,7 +40,7 @@
 
                 //Draw - Player and computer made the same choice
                 if (playerSelection == computerSelection) {
-                    result.textContent = "It's a draw!";
+                    result.textContent = `It's a draw! ${playerSelection} equals ${computerSelection}`;
                     container.appendChild(result);
                     return "draw";
                 }
