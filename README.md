@@ -1,2 +1,2 @@
 # odin-rock-paper-scissors
-Rock, Paper, Scissors program played from the JavaScript console.
+Rock, Paper, Scissors program played using an interactive UI.
