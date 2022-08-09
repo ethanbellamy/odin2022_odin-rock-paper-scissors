@@ -8,8 +8,10 @@
         <button id="rock">Rock</button>
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
-        <div id="results-container">
+        <div id="game">
             <p id="score">Score: Player 0 - 0 Computer</p>
+            <br id="break">
+            <div id="results-container"></div>
         </div>
 
         <script>
@@ -35,6 +37,7 @@
 
             playerScore = 0;
             computerScore = 0;
+            gameWon = false;
 
             function playRound (playerSelection, computerSelection) {
                 //Fixes case-insensitive playerSelection prior to comparison with computerSelection
@@ -64,7 +67,25 @@
                     computerScore += 1;
                 }
 
-                score.textContent = `Player ${playerScore} - ${computerScore} Computer`;
+                score.textContent = `Score: Player ${playerScore} - ${computerScore} Computer`;
+
+                if (playerScore == 5 || computerScore == 5) {
+                    gameWon = true;
+                    winner = document.createElement('p');
+
+                    if (playerScore > computerScore) {
+                        winner.textContent = 'Player wins!';
+                    }
+
+                    else {
+                        winner.textContent = 'Computer wins!';
+                    }
+
+                    game = document.querySelector('#game');
+                    brk = document.querySelector('#break');
+
+                    game.insertBefore(winner, brk);
+                }
             }
 
             buttons = document.querySelectorAll('button');
@@ -72,7 +93,10 @@
             buttons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     choice = e.target.id;
-                    playRound(choice, computerPlay());
+
+                    if (!gameWon) {
+                        playRound(choice, computerPlay());
+                    }
                 });
             });
         </script>
