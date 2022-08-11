@@ -45,7 +45,7 @@ h1 {
 }
 
 #choice-container div {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgb(255, 255, 255);
     padding: 8px;
     margin: 16px;
     border: 5px solid black;
@@ -54,6 +54,27 @@ h1 {
 
 #choice-container div:hover {
     border: 5px solid #b39802;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reset {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 3px solid white;
+    border-radius: 5px;
+    font-size: 35px;
+    padding: 10px 40px;
+    margin-bottom: 50px;
+    display: none;
+}
+
+#reset:hover {
+    background-color: rgba(255,255,255,0.1);
 }
 
 #results-header {
