@@ -35,11 +35,13 @@ h2 {
 #choice-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 #choice-container img {
     width: 256px;
     height: auto;
+    padding-bottom: 20px;
 }
 
 #choice-container div {
@@ -52,4 +54,12 @@ h2 {
 
 #choice-container div:hover {
     border: 5px solid gold;
+}
+
+#results-header {
+    visibility: hidden;
+}
+
+#results-container p {
+    text-align: center;
 }

@@ -21,32 +21,37 @@ function computerPlay() {
 playerScore = 0;
 computerScore = 0;
 gameWon = false;
+round = 0;
 
 function playRound (playerSelection, computerSelection) {
     //Fixes case-insensitive playerSelection prior to comparison with computerSelection
     playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
-    
+
+    header = document.querySelector('#results-header')
     container = document.querySelector('#results-container');
     result = document.createElement('p');
     score = document.querySelector('#score');
 
+    header.style.visibility = 'visible';
+    round += 1;
+
     //Draw - Player and computer made the same choice
     if (playerSelection == computerSelection) {
-        result.textContent = `It's a draw! ${playerSelection} equals ${computerSelection}`;
-        container.appendChild(result);
+        result.textContent = `Round ${round}: DRAW - ${playerSelection} draws with ${computerSelection}`;
+        container.insertBefore(result, container.firstChild);
     }
 
     //Player Wins - Rock > Scissors, Paper > Rock, Scissors > Paper
     else if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
-        result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
-        container.appendChild(result);
+        result.textContent = `Round ${round}: WIN - ${playerSelection} beats ${computerSelection}`;
+        container.insertBefore(result, container.firstChild);
         playerScore += 1;
     }
 
     //Player Loses - Rock < Paper, Paper < Scissors, Scissors < Rock
     else if ((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-        result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
-        container.appendChild(result);
+        result.textContent = `Round ${round}: LOSE - ${playerSelection} loses to ${computerSelection}`;
+        container.insertBefore(result, container.firstChild);
         computerScore += 1;
     }
 
