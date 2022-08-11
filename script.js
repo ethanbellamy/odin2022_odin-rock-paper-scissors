@@ -71,14 +71,14 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-buttons = document.querySelectorAll('button');
+playerChoices = document.querySelectorAll('div.choice');
 
-buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        choice = e.target.id;
+playerChoices.forEach(choice => {
+    choice.addEventListener('click', (e) => {
+        playerChoice = e.currentTarget.id;
 
         if (!gameWon) {
-            playRound(choice, computerPlay());
+            playRound(playerChoice, computerPlay());
         }
     });
 });
