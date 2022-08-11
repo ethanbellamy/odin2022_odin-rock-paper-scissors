@@ -17,12 +17,24 @@ h1 {
     padding: 25px;
 }
 
-button {
-    font-size: 100px;
+#score-container {
+    padding: 40px 0px 20px 0px;
+}
+
+h2 {
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+#winner {
+    visibility: hidden;
 }
 
 #choice-container {
     display: flex;
+    justify-content: center;
 }
 
 #choice-container img {

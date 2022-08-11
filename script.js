@@ -50,11 +50,13 @@ function playRound (playerSelection, computerSelection) {
         computerScore += 1;
     }
 
-    score.textContent = `Score: Player ${playerScore} - ${computerScore} Computer`;
+    //Update score after round
+    score.textContent = `Player ${playerScore} - ${computerScore} Computer`;
 
+    //Declare winner after first to 5 points
     if (playerScore == 5 || computerScore == 5) {
         gameWon = true;
-        winner = document.createElement('p');
+        winner = document.querySelector('#winner');
 
         if (playerScore > computerScore) {
             winner.textContent = 'Player wins!';
@@ -64,10 +66,7 @@ function playRound (playerSelection, computerSelection) {
             winner.textContent = 'Computer wins!';
         }
 
-        game = document.querySelector('#game');
-        brk = document.querySelector('#break');
-
-        game.insertBefore(winner, brk);
+        winner.style.visibility = 'visible';
     }
 }
 
