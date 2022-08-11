@@ -32,7 +32,7 @@ function playRound (playerSelection, computerSelection) {
     result = document.createElement('p');
     score = document.querySelector('#score');
 
-    header.style.visibility = 'visible';
+    header.style.display = 'block';
     round += 1;
 
     //Draw - Player and computer made the same choice
@@ -71,7 +71,7 @@ function playRound (playerSelection, computerSelection) {
             winner.textContent = 'Computer wins!';
         }
 
-        winner.style.visibility = 'visible';
+        winner.style.display = 'block';
     }
 }
 

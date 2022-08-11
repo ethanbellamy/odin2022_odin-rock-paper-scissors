@@ -18,10 +18,10 @@ h1 {
 }
 
 #score-container {
-    padding: 40px 0px 20px 0px;
+    padding: 40px 0px 40px 0px;
 }
 
-h2 {
+#score-container h2 {
     font-size: 35px;
     margin: 0;
     text-align: center;
@@ -29,7 +29,7 @@ h2 {
 }
 
 #winner {
-    visibility: hidden;
+    display: none;
 }
 
 #choice-container {
@@ -45,7 +45,7 @@ h2 {
 }
 
 #choice-container div {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 8px;
     margin: 16px;
     border: 5px solid black;
@@ -53,13 +53,17 @@ h2 {
 }
 
 #choice-container div:hover {
-    border: 5px solid gold;
+    border: 5px solid #b39802;
 }
 
 #results-header {
-    visibility: hidden;
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+    display: none;
 }
 
 #results-container p {
     text-align: center;
+    font-size: 20px;
 }
